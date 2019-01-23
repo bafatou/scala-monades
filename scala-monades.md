@@ -1,19 +1,19 @@
 ## <center>BA Fatou</br>Tutoriel sur les monades en scala</center>
 ## Sommaire
 <!--ts-->
-[Introduction](#introduction)<br>
-[Définition d'une monade](#definiton-dune-monade)<br>
-[Intallation](#installation-des-outils)</br>
-[Creation de monades en scala](#creation-d-une-monade-en-scala)</br>
-[Loi des monades](#loi-des-monades)</br>
-[Testons un exemple avec le type List](#testons-un-exemple-avec-le-type-list)</br>
-[Le type Option](#le-type-option)</br>
-[Les Fonctions isDefined et isEmpty](#les-fonctions-isDefined-et-isEmpty)</br>
-[Conclusion](#conclusion)</br>
+* [Introduction](#introduction)<br>
+* [Définition d'une monade](#definition-dune-monade)<br>
+* [Intallation](#installation-des-outils)</br>
+* [Creation de monades en scala](#creation-d-une-monade-en-scala)</br>
+* [Loi des monades](#loi-des-monades)</br>
+* [Testons un exemple avec le type List](#testons-un-exemple-avec-le-type-list)</br>
+* [Le type Option](#le-type-option)</br>
+* [Les Fonctions isDefined et isEmpty](#les-fonctions-isDefined-et-isEmpty)</br>
+* [Conclusion](#conclusion)</br>
 <!--te-->
 
 
-## Introduction : 
+## Introduction
 Bienvenue dans ce tutoriel ! Nous verrons ce qu'est une Monade et comment créer une nouvelle monade en scala. Si vous vous intéressez à la programmation fonctionnelle, vous avez sûrement déjà entendu parler des monades et peut-être les avez-vous utilisées sans le savoir.
 
 
