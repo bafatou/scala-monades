@@ -1,5 +1,5 @@
-##<center>BA Fatou</br>Tutoriel sur les monades en scala</center>
-##Sommaire
+## <center>BA Fatou</br>Tutoriel sur les monades en scala</center>
+## Sommaire
 <!--ts-->
 [Introduction](##introduction)<br>
 [Définition d'une monade](##definiton-dune-monade)<br>
@@ -13,18 +13,18 @@
 <!--te-->
 
 
-##Introduction : 
+## Introduction : 
 Bienvenue dans ce tutoriel ! Nous verrons ce qu'est une Monade et comment créer une nouvelle monade en scala. Si vous vous intéressez à la programmation fonctionnelle, vous avez sûrement déjà entendu parler des monades et peut-être les avez-vous utilisées sans le savoir.
 
 
-##Definition d'une monade
+## Definition d'une monade
 En théorie des langages fonctionnels typés, une **monade** est une structure permettant de manipuler des langages fonctionnels purs avec des traits impératifs. Un type monadique est un type de donnée répondant à certaines lois et généralement caractérisé dans Scala par la présence des deux **méthodes unit(aussi appelé return) et flatMap(aussi appelé bind)**, que nous aborderons ici même.
 
 **Une définition de compréhension** : Vous pouvez considérer les monades comme des **emballages** . Vous prenez un objet et l'envelopper avec une monade. C'est comme emballer un cadeau.
 
 Scala ne vient pas avec un type de monade intégré comme Haskell, nous allons donc modéliser la monade nous-mêmes. Si vous jetez un coup d'œil à quelques bibliothèques de programmation fonctionnelles comme Scalaz, vous y trouverez des monades.
 
-##Installation des outils
+## Installation des outils
 Pour suivre ce tutoriel il faut avoir installer les outils nécessaires : le JDK (Java Development Kit) et SBT (Simple Build Tool) qui est un outil de build utilisé par le langage Scala et Java. Nous travaillerons avec l’IDE Eclipse
 
 Pour commencer téléchargez le JDK (Java Development Kit) sur le site de Oracle :
@@ -42,7 +42,7 @@ Ouvrez l’application Eclipse  cliquez sur ‘’help’’ ensuite sélectionn
 Toujours dans Eclipse essayons de créer à présent un nouveau projet Scala suivez les étapes suivantes : « file – New – Scala Project »   nommez votre projet comme vous le voulez. 
 Dans notre nouveau projet scala, sur ‘’src’’,faites un clic droit ensuite : « New – Scala Object » que nous nommerons « Demonstration».
 
-##Création de monade en scala :
+## Création de monade en scala :
 Nous allons modéliser une monade avec un trait générique qui fournit les méthodes unit () et flatMap() *(trait est l'équivalent des Interfaces en Java )*. Nous l'appelons simplement M au lieu de Monad. 
 
 
@@ -57,11 +57,11 @@ Les monades prennent un paramètre de type. Nous n'avons pas simplement écrit M
 •	Future(x) est une monade où unit(x) = Future(x)</br></br>Les méthodes unit de ces monades ont des noms qui diffèrent, cependant elles implémentent toutes flatMap en conservant ce nom.
 
 
-###Lois des monades
+### Lois des monades
 
 
 Pour pouvoir être considéré comme une monade, un type doit satisfaire 3 lois :</br>
-####Associativité
+#### Associativité
 La fonction flatMap doit pouvoir être enchainée quelque soit le placement des parenthèses :</br>
 
     m flatMap f flatMap g == m flatMap (x => f(x) flatMap g)
@@ -69,11 +69,11 @@ La fonction flatMap doit pouvoir être enchainée quelque soit le placement des 
 Il est plus simple d’illustrer la notion d’associativité par l'exemple suivant : x, y et z des Integers :</br>
 
     x + (y + z) == (x + y) + z
-####Composition neutre par return à gauche
+#### Composition neutre par return à gauche
 Cette loi spécifie que si l’on appelle flatMap sur unit(x) en appliquant f, on doit obtenir f(x) :</br>
 
     unit(x) flatMap f == f(x)
-####Composition neutre par return à droite
+#### Composition neutre par return à droite
 La dernière loi dicte que si l’on applique une unit à flatMap d’une monade m le résultat doit être m :</br>
 
     m flatMap unit = m
@@ -97,7 +97,7 @@ Voici la signature de la fonction **flatMap :**</br>
     def flatMap[B](f: (A) => U[B]): U[B] 
 </br>
 Disons que U est une liste. Cela fonctionne pour divers autres types, mais nous allons utiliser List pour cet exemple. flatMap prend une fonction avec la signature A → List[B] et il utilise cette fonction pour transformer l'objet sous-jacent de type A en une List[B]. Cette opération est appelée *map*.  Après avoir transformé notre A sous-jacent en une list[B], cela nous laisse avec une list[List [B]]. Nous n’avons pas utilisé un map() ordinaire, nous avons utilisé flatMap(). Cela signifie que le travail n'est pas encore terminé, flatMap va maintenant "aplatir" notre list[list[B]] en list[B].</br></br>
-###Testons un exemple avec le type List :</br>
+### Testons un exemple avec le type List :</br>
 
     object Demonstration {
       def main(args: Array[String]) {
@@ -146,7 +146,7 @@ Nous obtenons le résultat suivant :
 
 </br>
 
-###Le type Option :
+### Le type Option :
 A présent explorons l’un des types monadiques les plus souvent utilisés à savoir le type option. Option est une construction qui nous permet d’éviter les pointeurs nuls dans Scala (en Haskell, il s’agit de Maybe). Une Option[A] est un type abstrait générique permettant de caractériser la présence ou l’absence de valeur via deux sous types qui sont Some[A] ou None. Un exemple classique d’utilisation du type Option est le suivant :</br>
 
     object Demonstration {
@@ -242,7 +242,7 @@ Nous obtenons le résultat souhaité :</br>
     Some(12)
 
 
-####Utilisation des fonctions isDefined et isEmpty du type Option :
+#### Utilisation des fonctions isDefined et isEmpty du type Option :
 Ces deux fonctions retournent un type Boolean (true ou false). isDefined retourne True si l'Option est un **Some(...)** et False sinon. isEmpty retourne True si l'option est la valeur **None** et False sinon.</br>
 
     object Demonstration {
@@ -260,7 +260,7 @@ Nous obtenons donc :
 
 
 
-###Conclusion :
+### Conclusion :
 
 Il existe plusieurs intérêts à l'usage des monades tel que : analyses statiques et preuves de programmes plus simples, usage de l'appel par nécessité, optimisations. Monad (et ces deux fonctions unit et flatMap) est un type assez puissant. J'espère avoir réussi à faire la lumière sur le mystère des monades.
 
