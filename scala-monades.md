@@ -4,11 +4,11 @@
 * [Introduction](#introduction)<br>
 * [Définition d'une monade](#definition-dune-monade)<br>
 * [Intallation](#installation-des-outils)</br>
-* [Creation de monades en scala](#creation-d-une-monade-en-scala)</br>
-* [Loi des monades](#loi-des-monades)</br>
-* [Testons un exemple avec le type List](#testons-un-exemple-avec-le-type-list)</br>
-* [Le type Option](#le-type-option)</br>
-* [Les Fonctions isDefined et isEmpty](#les-fonctions-isDefined-et-isEmpty)</br>
+* [Creation de monades en scala](#création-de-monade-en-scala)</br>
+* [Loi des monades](#lois-des-monades)</br>
+* [Testons un exemple avec le type List](#testons-un-exemple-avec-le-type-List)</br>
+* [Le type Option](#le-type-Option)</br>
+* [Les Fonctions isDefined et isEmpty](#utilisation-des-fonctions-isDefined-et-isEmpty-du-type-option)</br>
 * [Conclusion](#conclusion)</br>
 <!--te-->
 
@@ -42,7 +42,7 @@ Ouvrez l’application Eclipse  cliquez sur ‘’help’’ ensuite sélectionn
 Toujours dans Eclipse essayons de créer à présent un nouveau projet Scala suivez les étapes suivantes : « file – New – Scala Project »   nommez votre projet comme vous le voulez. 
 Dans notre nouveau projet scala, sur ‘’src’’,faites un clic droit ensuite : « New – Scala Object » que nous nommerons « Demonstration».
 
-## Création de monade en scala :
+## Création de monade en scala 
 Nous allons modéliser une monade avec un trait générique qui fournit les méthodes unit () et flatMap() *(trait est l'équivalent des Interfaces en Java )*. Nous l'appelons simplement M au lieu de Monad. 
 
 
