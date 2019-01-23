@@ -1,8 +1,8 @@
 ## <center>BA Fatou</br>Tutoriel sur les monades en scala</center>
 ## Sommaire
 <!--ts-->
-[Introduction](##introduction)<br>
-[Définition d'une monade](##definiton-dune-monade)<br>
+[Introduction](#introduction)<br>
+[Définition d'une monade](#definiton-dune-monade)<br>
 [Intallation](#installation-des-outils)</br>
 [Creation de monades en scala](#creation-d-une-monade-en-scala)</br>
 [Loi des monades](#loi-des-monades)</br>
